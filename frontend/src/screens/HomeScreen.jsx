@@ -1,12 +1,18 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import Paginate from '../components/Paginate';
 import Product from '../components/Product';
-import { useGetProductQuery } from '../slices/productsApiSlice.js';
+import { useGetProductsQuery } from '../slices/productsApiSlice.js';
 
 const HomeScreen = () => {
-  const { data: products, isLoading, error } = useGetProductQuery();
+  const { pageNumber, keyword } = useParams();
+  const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
+    pageNumber,
+  });
 
   return (
     <>
@@ -21,12 +27,17 @@ const HomeScreen = () => {
           {' '}
           <h1>Latest Products</h1>
           <Row>
-            {products?.map((product) => (
-              <Col key={products._id} sm={12} mg={6} lg={4} xl={3}>
+            {data?.products?.map((product) => (
+              <Col key={product._id} sm={12} mg={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
             ))}
           </Row>
+          <Paginate
+            pages={data.pages}
+            page={data.page}
+            keyword={keyword ? keyword : ''}
+          />
         </>
       )}
     </>
