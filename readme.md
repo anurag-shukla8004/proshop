@@ -23,6 +23,24 @@ This project is part of my [MERN Stack From Scratch | eCommerce Platform] projec
 - PayPal / credit card integration
 - Database seeder (products & users)
 
+  ```
+Sample User Logins
+
+admin@email.com (Admin)
+123456
+
+john@email.com (Customer)
+123456
+
+jane@email.com (Customer)
+123456
+
+Paypal Email and Password
+Email - sb-p4743hk26275109@personal.example.com
+Password - G7z7O=rM
+
+```
+
 ## Usage
 
 - Create a MongoDB database and obtain your `MongoDB URI` - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
@@ -82,15 +100,4 @@ npm run data:import
 npm run data:destroy
 ```
 
-```
-Sample User Logins
 
-admin@email.com (Admin)
-123456
-
-john@email.com (Customer)
-123456
-
-jane@email.com (Customer)
-123456
-```
