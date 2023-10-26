@@ -23,7 +23,7 @@ This project is part of my [MERN Stack From Scratch | eCommerce Platform] projec
 - PayPal / credit card integration
 - Database seeder (products & users)
 
-  ```
+```
 Sample User Logins
 
 admin@email.com (Admin)
